@@ -1,4 +1,4 @@
 class Tag < ApplicationRecord
-  has_many :tag_resources
-  has_many :resources, through: :tag_resources
+  has_many :resource_tags
+  has_many :resources, through: :resource_tags
 end

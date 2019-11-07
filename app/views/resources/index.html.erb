@@ -1,0 +1,12 @@
+<h1>Resources index</h1>
+
+<% @resources.each do |resource| %>
+  <p>title: <%= resource.name %></p>
+  <p>description: <%= resource.description %></p>
+  <p>media_type: <%= resource.media_type %></p>
+  <p>tags:
+    <% resource.tags.each do |t| %>
+    <%=  t.name %>
+  <% end%></p>
+  <hr>
+<% end%>
