@@ -1,12 +1,19 @@
 <h1>Resources index</h1>
 
+<h3>total calendar pdfs: <%= Resource.all.count %></h3>
+
+
 <% @resources.each do |resource| %>
-  <p>title: <%= resource.name %></p>
+  <p>title: <%= resource.title %></p>
   <p>description: <%= resource.description %></p>
   <p>media_type: <%= resource.media_type %></p>
+  <p>url: <%= link_to resource.url, resource.url %></p>
   <p>tags:
     <% resource.tags.each do |t| %>
-    <%=  t.name %>
+    <%=  t.title %>
   <% end%></p>
+  <p>images:
+    <% resource.image_urls %>
+  </p>
   <hr>
 <% end%>
